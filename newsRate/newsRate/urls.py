@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_views
 
 from Pages.views import home_view, profile_view
 
@@ -23,4 +24,7 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('home/', home_view, name='home'),
     path('profile/', profile_view, name='profile'),
+
+    #django auth
+    path('accounts/login', auth_views.LoginView.as_view(template_name ="accounts/login.html"), name = 'login'),
 ]
