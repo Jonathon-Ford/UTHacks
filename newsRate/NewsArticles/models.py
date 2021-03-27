@@ -6,7 +6,7 @@ class ArticleRating(models.Model):
     star = models.FloatField()
     Rating = models.TextField(default=' ')
     ratedate = models.DateTimeField()
-    ArticleRating = models.ForeignKey(Rating,
+    ArticleRating = models.ForeignKey('self',
                              on_delete=models.CASCADE)
 
     def __str__(self):
