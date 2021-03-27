@@ -1,6 +1,6 @@
 <div>
     <span> <a href="{%  url 'home' %}"> Home</a> </span>
-    <span> Search</span>
+    <span> <a href="{%  url 'search' %}"> Search</a></span>
     <span> Profile</span>
     <span style = "float:right">
         {% if user.is_authenticated %}
