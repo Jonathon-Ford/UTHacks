@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     #
     'Pages',
     'Profiles',
+    'ArticleRating',
+    'Article',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
