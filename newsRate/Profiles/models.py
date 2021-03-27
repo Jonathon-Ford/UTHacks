@@ -4,6 +4,6 @@ from django.db import models
 
 
 class Profiles(models.Model):
-    name = models.TextField()
+    name = models.CharField(max_length=50)
     areaOfExpertise = models.TextField(default='none')
     level = models.IntegerField()
