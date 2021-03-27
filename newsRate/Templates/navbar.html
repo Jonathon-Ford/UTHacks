@@ -2,4 +2,11 @@
     <span> <a href="{%  url 'home' %}"> Home</a> </span>
     <span> Search</span>
     <span> Profile</span>
+    <span style = "float:right">
+        {% if user.is_authenticated %}
+            <span>Welcome {{ user.username }}</span>
+        {% else %}
+            <span><a href="{% url 'login' %}"></a></span>
+        {% endif %}
+    </span>
 </div>
