@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="521b9ce5-595b-4162-91c6-1a0be7124baf" name="Default Changelist" comment="NewsArticles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newsRate/NewsArticles/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsRate/NewsArticles/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsRate/NewsArticles/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsRate/NewsArticles/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsRate/NewsArticles/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsRate/newsRate/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsRate/newsRate/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616873219242</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="NewsArticles">
+      <created>1616873634943</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616873634943</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
