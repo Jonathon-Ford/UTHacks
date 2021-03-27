@@ -6,3 +6,11 @@ from django.http import HttpResponse
 
 def home_view(request, *args, **kwargs):
     return render(request, "home.html", {})
+
+
+def profile_view(request, *args, **kwargs):
+    return render(request, "profile.html", {})
+
+
+def search_view(request, *args, **kwargs):
+    return render(request, "search.html", {})
