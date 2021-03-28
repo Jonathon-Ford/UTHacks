@@ -18,7 +18,6 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 
 from Pages.views import home_view, search_view, ProfileView
-from Profiles.views import UserEditView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +25,6 @@ urlpatterns = [
     path('home/', home_view, name='home'),
     path('accounts/profile/', ProfileView.as_view(), name='profile'),
     path('search', search_view, name='search'),
-    path('edit_profile/', UserEditView.as_view(),name = 'edit_profile'),
 
     #django auth
     path('accounts/login', auth_views.LoginView.as_view(template_name ="accounts/login.html"), name = 'login'),
