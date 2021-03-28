@@ -1,7 +1,6 @@
 from django.contrib import admin
  
  
-from .models import ArticleRating, Article
+from .models import Articles
  
-admin.site.register(ArticleRating)
-admin.site.register(Article)
+admin.site.register(Articles)
