@@ -5,16 +5,16 @@
     </h1>
 
     {%  with profile=user.profile %}
-        {% if user.profiles %}
+        {% if profiles %}
 
             <h2>
-                {{ user.profile.name|default:"" }}
+                {{ profile.name|default:"" }}
             </h2>
 
             <br/>
             <div>
                 Qualifications:
-                {% for qualifacation in user.profile.qualification.all %}
+                {% for qualifacation in profile.qualification.all %}
 
                     <span>
                         {{ qualifacation.name }}{% if not forloop.last %}, {% endif %}
