@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{%  block content %}
+    <h1>
+        {{ user.get_full_name }} (@{{ user.username }})
+    </h1>
+
+    {%  with profile=user.Profiles %}
+
+        {% if profiles %}
+
+            <h2>
+                {{ Profiles.name|default:"" }}
+            </h2>
+
+            <br/>
+            <div>
+                Qualifications:
+                {% for qualifacation in Profiles.qualification.all %}
+
+                    <span>
+                        {{ qualifacation.name }}{% if not forloop.last %}, {% endif %}
+                    </span>
+
+                {% endfor %}
+            </div>
+
+        {% endif %}
+
+    {% endwith %}
+{% endblock %}

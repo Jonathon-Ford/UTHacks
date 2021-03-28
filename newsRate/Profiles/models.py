@@ -1,9 +1,23 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+
+class UserQualifications(models.Model):
+    name = models.CharField(max_length=64, unique=True)
+    normalizedName = models.CharField(max_length=64, unique=True)
+    description = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
 
 
 class Profiles(models.Model):
-    name = models.CharField(max_length=50)
-    areaOfExpertise = models.TextField(default='none')
-    level = models.IntegerField()
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile", blank=True,null=True)
+    qualification = models.ManyToManyField(UserQualifications, blank=True)
+    name = models.CharField(max_length=50, blank=True, null=True)
+    isHighSchoolGraduate = models.BooleanField(default=False)
+    isUndergraduate = models.BooleanField(default=False)
+    isCollegeGraduate = models.BooleanField(default=False)
+    isDoctor = models.BooleanField(default=False)
+    isExpert = models.BooleanField(default=False)
