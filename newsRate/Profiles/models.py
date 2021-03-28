@@ -7,14 +7,17 @@ class UserQualifications(models.Model):
     normalizedName = models.CharField(max_length=64, unique=True)
     description = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class Profiles(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile", blank=True,null=True)
+    qualification = models.ManyToManyField(UserQualifications, blank=True)
     name = models.CharField(max_length=50, blank=True, null=True)
-    isHighSchoolGraduate = models.BooleanField()
-    isUndergraduate = models.BooleanField()
-    isCollegeGraduate = models.BooleanField()
-    isDoctor = models.BooleanField()
-    isExpert = models.BooleanField()
+    isHighSchoolGraduate = models.BooleanField(default=False)
+    isUndergraduate = models.BooleanField(default=False)
+    isCollegeGraduate = models.BooleanField(default=False)
+    isDoctor = models.BooleanField(default=False)
+    isExpert = models.BooleanField(default=False)
