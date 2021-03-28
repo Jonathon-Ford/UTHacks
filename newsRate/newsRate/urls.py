@@ -18,6 +18,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 
 from Pages.views import home_view, search_view, ProfileView
+from Profiles.views import register_view, edit_profile
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,8 +26,10 @@ urlpatterns = [
     path('home/', home_view, name='home'),
     path('accounts/profile/', ProfileView.as_view(), name='profile'),
     path('search', search_view, name='search'),
+    path('accounts/edit_profile', edit_profile, name='edit_profile'),
 
-    #django auth
-    path('accounts/login', auth_views.LoginView.as_view(template_name ="accounts/login.html"), name = 'login'),
-    path('accounts/logout', auth_views.LogoutView.as_view(), name = 'logout'),
+    # django auth
+    path('accounts/login', auth_views.LoginView.as_view(template_name="accounts/login.html"), name='login'),
+    path('accounts/logout', auth_views.LogoutView.as_view(), name='logout'),
+    path('accounts/register/', register_view, name='register')
 ]

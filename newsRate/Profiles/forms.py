@@ -1,17 +1,18 @@
 from django import forms
 from .models import Profiles
+from django.contrib.auth.forms import UserCreationForm
 
 
 class ProfilesEditForm(forms.ModelForm):
     class Meta:
         model = Profiles
-        fields = {
+        fields = [
             'name',
-            'qualification',
-        }
+            'qualification'
+        ]
 
 
-class ProfilesForm(forms.ModelForm):
+class ProfilesForm(UserCreationForm):
     class Meta:
         model = Profiles
-        fields = {'name', 'qualification'}
+        fields = ['email', 'password1', 'password2', 'name', 'qualification']

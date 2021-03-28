@@ -17,6 +17,7 @@ class Profiles(models.Model):
 
     qualification = models.ManyToManyField(UserQualifications, blank=True)
     name = models.CharField(max_length=50, blank=True, null=True)
+    email = models.CharField(max_length=50, blank=True, null=True)
 
     isHighSchoolGraduate = models.BooleanField(default=False)
     isUndergraduate = models.BooleanField(default=False)

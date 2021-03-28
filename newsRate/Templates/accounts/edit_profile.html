@@ -2,11 +2,20 @@
 {%  block content %}
    <h1>Edit Profile</h1>
 
+
+    {% if user.isauthenticated %}
+        {% if user.id == profile.user.id %}
     <div class="form-group">
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-secondary">Update Profile</button>
+        <input type="submit" value="Save"/>
     </form>
     </div>
+        {% else %}
+        <h1>Incorrect user to view page</h1>
+    {% endif %}
+        <h1>You need to log in to view this page</h1>
+{% endif %}
+
 {% endblock %}
