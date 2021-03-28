@@ -3,9 +3,9 @@ from django.db import models
  
  
 class Articles(models.Model):
-    Title = models.CharField(max_length=100)
-    Author = models.CharField(max_length=100)
-    Rating = models.FloatField()
-    Review = models.TextField(default=' ')
-    RatedDate = models.DateTimeField()
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    rating = models.FloatField()
+    review = models.TextField(default=' ')
+    ratedDate = models.DateTimeField()
  
