@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {%  block content %}
+    <img src="http://tinygraphs.com/labs/isogrids/hexa/{{ user.username }}?theme=seascape&numcolors=46size">
     <h1>
         {{ user.get_full_name }} (@{{ user.username }})
     </h1>
 
     {%  with profile=user.profile %}
-        {% if profiles %}
+        {% if profile %}
 
             <h2>
                 {{ profile.name|default:"" }}
@@ -22,7 +23,9 @@
 
                 {% endfor %}
             </div>
-
+            <div>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{%  url 'edit_profile' %}">Edit Profile</a></li>
+            </div>
         {% endif %}
 
     {% endwith %}
