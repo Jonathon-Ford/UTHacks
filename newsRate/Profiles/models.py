@@ -13,11 +13,16 @@ class UserQualifications(models.Model):
 
 class Profiles(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile", blank=True,null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+
     qualification = models.ManyToManyField(UserQualifications, blank=True)
     name = models.CharField(max_length=50, blank=True, null=True)
+
     isHighSchoolGraduate = models.BooleanField(default=False)
     isUndergraduate = models.BooleanField(default=False)
     isCollegeGraduate = models.BooleanField(default=False)
     isDoctor = models.BooleanField(default=False)
     isExpert = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.user.username} Profiles'
