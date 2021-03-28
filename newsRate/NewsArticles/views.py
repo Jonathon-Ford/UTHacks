@@ -4,5 +4,5 @@ from .models import Article
  
 def article_list(request):
    context = {'Article': Article.Title.all()}
-   return render(request, "article_list.html", context)
+   return render(request, "search.html", context)
  

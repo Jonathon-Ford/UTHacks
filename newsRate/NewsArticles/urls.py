@@ -3,5 +3,5 @@ from .views import article_list
  
  
 urlpatterns = [
-    path('Articles', article_list, name='articles'),
+    path('Articles', search, name='articles'),
 ]
