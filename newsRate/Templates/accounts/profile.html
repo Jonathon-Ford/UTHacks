@@ -4,18 +4,17 @@
         {{ user.get_full_name }} (@{{ user.username }})
     </h1>
 
-    {%  with profile=user.Profiles %}
-
-        {% if profiles %}
+    {%  with profile=user.profile %}
+        {% if user.profiles %}
 
             <h2>
-                {{ Profiles.name|default:"" }}
+                {{ user.profile.name|default:"" }}
             </h2>
 
             <br/>
             <div>
                 Qualifications:
-                {% for qualifacation in Profiles.qualification.all %}
+                {% for qualifacation in user.profile.qualification.all %}
 
                     <span>
                         {{ qualifacation.name }}{% if not forloop.last %}, {% endif %}
